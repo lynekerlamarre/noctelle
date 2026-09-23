@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOCTELLE · Maison de Parfum</title>
+<meta name="description" content="NOCTELLE makes parfums and colognes that last long after you've gone. Six scents, small batches. Try all six at home with the $38 discovery set.">
+<meta name="theme-color" content="#140E13">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NOCTELLE · Leave the room. Stay in it.">
+<meta property="og:description" content="Parfums and colognes made to last long after you've gone. Try all six at home.">
+<!-- DEPLOY STEP: replace both URLs below with the live absolute address -->
+<meta property="og:url" content="https://noctelle.onrender.com/">
+<meta property="og:image" content="https://noctelle.onrender.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23140E13'/%3E%3Cpath d='M32 10C32 10 16 30 16 40a16 16 0 0 0 32 0C48 30 32 10 32 10Z' fill='none' stroke='%23CDB8E8' stroke-width='3'/%3E%3Cpath d='M38 30a10 10 0 1 0 0 18 8 8 0 1 1 0-18Z' fill='%23EFE7E2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- one environment: fixed background layer behind everything -->
+<div class="env" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div></div>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top" aria-label="NOCTELLE home">
+    <svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8C32 8 15 29 15 40a17 17 0 0 0 34 0C49 29 32 8 32 8Z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M38 29a10.5 10.5 0 1 0 0 19 8.5 8.5 0 1 1 0-19Z" fill="currentColor"/></svg>
+    <span>NOCTELLE</span>
+  </a>
+  <ul class="links">
+    <li><a href="#collection">Collection</a></li>
+    <li><a href="#wear">Wear it</a></li>
+    <li><a href="#faq">Questions</a></li>
+  </ul>
+  <a class="btn btn-sm" href="#discovery">Discovery set · $38</a>
+</nav>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ HERO: the trail ============ -->
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="stage">
+    <div class="halo" aria-hidden="true"></div>
+    <canvas class="mist" aria-hidden="true"></canvas>
+    <svg class="ribbon" aria-hidden="true"><defs>
+      <linearGradient id="ribbonGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#EFE7E2" stop-opacity=".9"/><stop offset=".5" stop-color="#CDB8E8" stop-opacity=".85"/><stop offset="1" stop-color="#CDB8E8" stop-opacity=".35"/></linearGradient>
+      <filter id="ribbonBlur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="6"/></filter>
+    </defs>
+      <path class="r-glow" pathLength="1" d=""/>
+      <path class="r-line" pathLength="1" d=""/>
+    </svg>
+    <div class="flacon" aria-hidden="true"></div>
+    <video class="hero-video" muted playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <div class="band band-1 side-l fx-blur" data-a="0" data-b="0.20">
+      <p class="kicker chip">Maison de parfum · Paris, after dark</p>
+      <h1 class="split">Leave the room. Stay in it.</h1>
+      <p class="sub">Parfums and colognes made to last long after you've gone.</p>
+    </div>
+    <div class="band band-2 side-r fx-scatter" data-a="0.25" data-b="0.47" data-spread="0.5">
+      <h2 class="split">Most scents fade by lunch.</h2>
+      <p class="sub">Ours are still there at midnight.</p>
+    </div>
+    <div class="band band-3 side-l fx-drift" data-a="0.52" data-b="0.74">
+      <h2 class="split">Not the department store haze.</h2>
+      <p class="sub">Six scents. Small batches. Nothing that smells like everyone else.</p>
+    </div>
+    <div class="band band-4 settle fx-rise" data-a="0.79" data-b="1" data-ramp="0.06">
+      <h2 class="split">Follow the trail.</h2>
+      <p class="sub">Try all six at home before you choose a bottle.</p>
+      <div class="cta-row">
+        <a class="btn" href="#discovery">Get the discovery set · $38</a>
+        <a class="btn btn-ghost" href="#collection">See the collection</a>
+      </div>
+    </div>
+
+    <!-- static hero: phones, portrait tablets, reduced motion -->
+    <div class="static-copy">
+      <p class="kicker">Maison de parfum · Paris,&nbsp;after&nbsp;dark</p>
+      <h1>Leave the room. Stay&nbsp;in&nbsp;it.</h1>
+      <p class="sub">Parfums and colognes made to last long after you've gone.</p>
+      <div class="cta-row">
+        <a class="btn" href="#discovery">Get the discovery set · $38</a>
+        <a class="btn btn-ghost" href="#collection">See the collection</a>
+      </div>
+    </div>
+
+    <div class="cue" aria-hidden="true"><span>Scroll</span><i></i></div>
+  </div>
+</section>
+
+<!-- everything below rides the sillage trail -->
+<div class="journey">
+  <svg class="trail" aria-hidden="true"><defs>
+    <linearGradient id="trailGrad" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="1000"><stop offset="0" stop-color="#CDB8E8" stop-opacity=".55"/><stop offset="1" stop-color="#EFE7E2" stop-opacity=".35"/></linearGradient>
+  </defs><path class="t-glow" pathLength="1" d=""/><path class="t-line" pathLength="1" d=""/></svg>
+
+  <!-- ============ SILLAGE ============ -->
+  <section class="sec sillage" id="sillage" aria-labelledby="sillage-h">
+    <div class="wrap sillage-grid reveal">
+      <div class="word">
+        <p class="label">Noun · French</p>
+        <h2 id="sillage-h" class="huge">sillage</h2>
+        <p class="phon">/ see · yahzh /</p>
+      </div>
+      <div class="def">
+        <p class="lede">The trail of scent a person leaves in the air after they've walked past.</p>
+        <p>It's how a room remembers you. Every NOCTELLE fragrance is built around it: rich oils, a high concentration, and a base that's still talking at midnight.</p>
+        <dl class="stats">
+          <div><dt>Perfume oil in every parfum</dt><dd><span data-count="28" data-prefix="22–">22–28</span>%</dd></div>
+          <div><dt>Hours on skin, on most people</dt><dd><span data-count="12" data-prefix="8–">8–12</span></dd></div>
+          <div><dt>Bottles in each batch</dt><dd><span data-count="400">400</span></dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ COLLECTION ============ -->
+  <section class="sec collection" id="collection" aria-labelledby="col-h">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="label">The collection</p>
+        <h2 id="col-h">Six scents. No&nbsp;“for&nbsp;him.” No&nbsp;“for&nbsp;her.”</h2>
+        <p class="lede">Four parfums for the evening, two colognes for the day that runs late. Every one is made to be worn by anyone.</p>
+        <div class="filters" role="group" aria-label="Filter the collection">
+          <button type="button" class="chip-btn" aria-pressed="true" data-filter="all">All six</button>
+          <button type="button" class="chip-btn" aria-pressed="false" data-filter="parfum">Parfums</button>
+          <button type="button" class="chip-btn" aria-pressed="false" data-filter="cologne">Colognes</button>
+        </div>
+      </header>
+      <ul class="cards" id="cards"></ul>
+    </div>
+  </section>
+
+  <!-- ============ WEAR IT (the interactive moment) ============ -->
+  <section class="sec wear" id="wear" aria-labelledby="wear-h">
+    <div class="wrap">
+      <header class="sec-head center reveal">
+        <p class="label">Wear it through a night</p>
+        <h2 id="wear-h">Press and hold. Watch it unfold.</h2>
+        <p class="lede">A fragrance is a story told in three parts. Pick a scent, then hold the circle to wear it from the first spray to the last hour.</p>
+      </header>
+      <div class="wear-grid reveal">
+        <div class="picker" role="radiogroup" aria-label="Choose a scent to wear" id="picker"></div>
+        <div class="holder">
+          <button type="button" class="hold" id="hold" aria-describedby="hold-help">
+            <svg viewBox="0 0 200 200" aria-hidden="true">
+              <circle class="h-track" cx="100" cy="100" r="92"/>
+              <circle class="h-prog" cx="100" cy="100" r="92" pathLength="1"/>
+            </svg>
+            <span class="h-glow" aria-hidden="true"></span>
+            <span class="h-label"><span class="h-verb">Hold</span><span class="h-hour" id="hour">Hour 0</span></span>
+          </button>
+          <p class="hold-help" id="hold-help">Press and hold, or hold the space bar.</p>
+        </div>
+        <ol class="layers" id="layers">
+          <li data-at="0.06"><span class="l-when">First 15 minutes</span><span class="l-name">Top notes</span><span class="l-notes"></span></li>
+          <li data-at="0.36"><span class="l-when">15 minutes to 3 hours</span><span class="l-name">Heart</span><span class="l-notes"></span></li>
+          <li data-at="0.72"><span class="l-when">3 to 12 hours</span><span class="l-name">Base</span><span class="l-notes"></span></li>
+        </ol>
+      </div>
+      <p class="wear-done" id="wear-done" aria-live="polite"></p>
+    </div>
+  </section>
+
+  <!-- ============ DISCOVERY SET (the one CTA) ============ -->
+  <section class="sec discovery" id="discovery" aria-labelledby="disc-h">
+    <div class="wrap disc-panel reveal">
+      <div class="disc-art" id="disc-art" aria-hidden="true"></div>
+      <div class="disc-copy">
+        <p class="label">The discovery set</p>
+        <h2 id="disc-h">Don't buy blind.</h2>
+        <p class="lede">Six 2ml vials, one of every scent. Wear each for a full day. It's $38, and all $38 comes off your first full bottle.</p>
+        <ol class="steps">
+          <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="16" width="32" height="24" rx="2"/><path d="M8 22h32M20 16v6M28 16v6"/></svg><div><h3>Order the set</h3><p>Ships in two days in a keepsake box.</p></div></li>
+          <li><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="14"/><path d="M29 14a10 10 0 1 0 0 20 12 12 0 1 1 0-20Z"/></svg><div><h3>Wear one a day</h3><p>Morning to midnight. See which one people ask about.</p></div></li>
+          <li><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="18" width="20" height="24" rx="2"/><rect x="19" y="8" width="10" height="7" rx="1"/><path d="M22 15h4v3h-4z"/></svg><div><h3>Choose your bottle</h3><p>Your $38 comes off the full 50ml. The credit lasts 60 days.</p></div></li>
+        </ol>
+        <a class="btn" href="#order">Get the discovery set · $38</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ VOICES ============ -->
+  <section class="sec voices" aria-labelledby="voices-h">
+    <div class="wrap">
+      <h2 id="voices-h" class="label reveal">What people noticed</h2>
+      <div class="quotes">
+        <figure class="q reveal"><blockquote>“Someone stopped me in a hallway to ask what I was wearing. At eleven at&nbsp;night.”</blockquote><figcaption>Adaeze O. · <span>Minuit Ambré</span></figcaption></figure>
+        <figure class="q reveal"><blockquote>“I’ve blind bought and regretted it for years. The set fixed that. Vétiver Noir lasts my whole&nbsp;shift.”</blockquote><figcaption>Marcus T. · <span>Vétiver Noir</span></figcaption></figure>
+        <figure class="q reveal"><blockquote>“It doesn’t smell like the perfume counter. It smells like me, on a good&nbsp;day.”</blockquote><figcaption>Léa R. · <span>Iris Poudre</span></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec faq" id="faq" aria-labelledby="faq-h">
+    <div class="wrap faq-grid">
+      <header class="reveal">
+        <p class="label">Questions</p>
+        <h2 id="faq-h">Before you choose.</h2>
+        <p class="lede">The things people ask us most, answered straight.</p>
+      </header>
+      <div class="qa reveal">
+        <details><summary>Will it actually last?</summary><p>Yes. Our parfums are 22 to 28 percent perfume oil. Most designer eau de toilettes sit under 15. On most skin you'll get 8 to 12 hours, and longer on clothes.</p></details>
+        <details><summary>What's the difference between your parfums and colognes?</summary><p>The parfums are deeper and warmer, made for evenings. The colognes are brighter and fresher, but they're cologne intense at 15 to 18 percent oil, so they still last 6 to 8 hours instead of the usual two.</p></details>
+        <details><summary>Are these for men or women?</summary><p>Both. We don't split the collection by gender. Wear the one that smells like you.</p></details>
+        <details><summary>What if none of them are right for me?</summary><p>Then you've spent $38 instead of $185, and you keep the set. Unopened full bottles can be returned within 30 days for a full refund.</p></details>
+        <details><summary>I have sensitive skin. Can I still wear them?</summary><p>Every formula meets IFRA safety standards and we publish the full ingredient list for each scent. If your skin is reactive, spray on your clothes or scarf. The trail is just as strong.</p></details>
+        <details><summary>How does shipping work?</summary><p>The discovery set ships in two business days. Full bottles ship free on orders over $150.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ORDER FORM ============ -->
+  <section class="sec order" id="order" aria-labelledby="order-h">
+    <div class="wrap">
+      <div class="order-card reveal">
+        <p class="label">Reserve yours</p>
+        <h2 id="order-h">Start with all six.</h2>
+        <p class="lede">Tell us where to send it. We'll email you a secure checkout link for your $38 discovery set.</p>
+        <form id="order-form" novalidate>
+          <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" placeholder="Camille Laurent" required></div>
+          <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div>
+          <div class="field"><label for="f-country">Shipping to</label>
+            <select id="f-country" name="country" autocomplete="country-name">
+              <option>United States</option><option>Canada</option><option>United Kingdom</option><option>France</option><option>Germany</option><option>Australia</option><option>Somewhere else</option>
+            </select>
+          </div>
+          <fieldset class="field fams"><legend>What do you usually reach for? <span>(optional)</span></legend>
+            <label><input type="checkbox" name="family" value="warm"><span>Warm and ambery</span></label>
+            <label><input type="checkbox" name="family" value="woody"><span>Woody and smoky</span></label>
+            <label><input type="checkbox" name="family" value="floral"><span>Floral</span></label>
+            <label><input type="checkbox" name="family" value="fresh"><span>Fresh and citrus</span></label>
+          </fieldset>
+          <p class="form-error" id="form-error" role="alert"></p>
+          <button class="btn btn-wide" type="submit">Reserve my discovery set</button>
+          <p class="fine">No payment today. Unsubscribe any time.</p>
+        </form>
+        <div class="success" id="success" tabindex="-1" hidden>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8C32 8 15 29 15 40a17 17 0 0 0 34 0C49 29 32 8 32 8Z"/></svg>
+          <h3 id="success-h">Your set is reserved.</h3>
+          <p id="success-p">Check your inbox for the checkout link.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-grid">
+    <div>
+      <a class="brand" href="#top"><svg class="mark" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8C32 8 15 29 15 40a17 17 0 0 0 34 0C49 29 32 8 32 8Z" fill="none" stroke="currentColor" stroke-width="2.4"/><path d="M38 29a10.5 10.5 0 1 0 0 19 8.5 8.5 0 1 1 0-19Z" fill="currentColor"/></svg><span>NOCTELLE</span></a>
+      <p class="foot-line">Leave the room. Stay in it.</p>
+    </div>
+    <ul class="foot-links">
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#wear">Wear it</a></li>
+      <li><a href="#discovery">Discovery set</a></li>
+      <li><a href="#faq">Questions</a></li>
+    </ul>
+    <p class="disclose">NOCTELLE is a fictional fragrance house created as a design concept. The bottles are illustrations, and the people and quotes are invented. © 2026</p>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
