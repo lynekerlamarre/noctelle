@@ -7,21 +7,23 @@
    ================================================================= */
 
 // Each product: set `price` (a number, or null for "Ask for price") and
-// `stripe` (the Stripe Payment Link for that bottle). With no link yet,
-// the button opens the request form with the product filled in.
+// `stripe` (the Stripe Payment Link for that bottle, https://buy.stripe.com/...).
+// With no link yet, the button opens the request form with the product filled in.
+// `for` is the shop category: one of CATEGORIES below.
+const CATEGORIES = ['For him', 'For her', 'Unisex'];
 const PRODUCTS = [
   { id: 'kayali-marrakesh', brand: 'Kayali', name: 'Marrakesh in a Bottle', variant: 'Orange Blossom | 24',
-    type: 'Eau de parfum', size: '100 ml', for: 'Feminine', img: 'assets/products/kayali-marrakesh-orange-blossom.jpg',
+    type: 'Eau de parfum', size: '100 ml', for: 'For her', img: 'assets/products/kayali-marrakesh-orange-blossom.jpg',
     price: null, stripe: '', tint: '#E8A868',
     card: 'Orange blossom · Turkish rose · cedar',
     top: 'Bergamot, orange blossom', heart: 'Pink pepper, Turkish rose', base: 'Neroli, cedarwood' },
   { id: 'rabanne-1-million', brand: 'Paco Rabanne', name: '1 Million', variant: '',
-    type: 'Eau de toilette', size: '100 ml', for: 'Masculine', img: 'assets/products/rabanne-1-million.jpg',
+    type: 'Eau de toilette', size: '100 ml', for: 'For him', img: 'assets/products/rabanne-1-million.jpg',
     price: null, stripe: '', tint: '#D8B45A',
     card: 'Blood mandarin · cinnamon · leather',
     top: 'Blood mandarin, grapefruit, mint', heart: 'Cinnamon, spice, rose', base: 'Amber, leather, patchouli, woods' },
   { id: 'xerjoff-erba-gold', brand: 'Xerjoff', name: 'Erba Gold', variant: '',
-    type: 'Eau de parfum', size: '100 ml', for: 'Shared', img: 'assets/products/xerjoff-erba-gold.jpg',
+    type: 'Eau de parfum', size: '100 ml', for: 'Unisex', img: 'assets/products/xerjoff-erba-gold.jpg',
     price: null, stripe: '', tint: '#F0C24A',
     card: 'Citrus · ginger · pear · vanilla',
     top: 'Brazilian orange, bergamot, lemon, ginger', heart: 'Melon, pear, green apple, cinnamon, cardamom', base: 'White musk, vanilla, amber, woods' }
@@ -216,7 +218,7 @@ MQLS.forEach(m => m.addEventListener('change', applyHeroMode));
 
 /* ---------- golden smoke: drifts down as the page goes down, parts at the end ---------- */
 let W = 0, H = 0, dpr = 1, smokeRaf = null;
-const SMOKE_COLORS = ['236,178,84', '248,214,146', '255,238,206', '214,138,58', '128,64,92'];
+const SMOKE_COLORS = ['236,170,72', '250,208,128', '255,236,200', '214,132,48', '120,72,36'];
 const sprites = SMOKE_COLORS.map(c => {
   const cv = document.createElement('canvas'); cv.width = cv.height = 256;
   const g = cv.getContext('2d'), gr = g.createRadialGradient(128, 128, 0, 128, 128, 128);
@@ -364,7 +366,7 @@ cards.innerHTML = PRODUCTS.map(p => `
       <p class="notes">${esc(p.card)}</p>
       <div class="row"><span class="size">${esc(p.size.toUpperCase())}</span>${p.price != null ? `<span class="price">${money(p.price)}</span>` : '<span class="price ask">ASK FOR PRICE</span>'}</div>
       ${p.stripe
-        ? `<a class="btn btn-wide buy" href="${esc(p.stripe)}" rel="noopener">Buy now</a>`
+        ? `<a class="btn btn-wide buy" href="${esc(p.stripe)}" rel="noopener">Buy now${p.price != null ? ' · ' + money(p.price) : ''}</a><p class="secure">Secure checkout by Stripe</p>`
         : `<a class="btn btn-wide buy" href="#request" data-want="${esc(fullName(p) + ', ' + p.size)}">${p.price != null ? 'Order now' : 'Ask about this bottle'}</a>`}
     </div>
   </li>`).join('');
@@ -374,22 +376,36 @@ cards.addEventListener('click', e => {
   $('#f-want').value = a.dataset.want;
   setTimeout(() => $('#f-name').focus({ preventScroll: true }), 700);
 });
-// filter chips appear once the collection is big enough to need them
-const kinds = [...new Set(PRODUCTS.map(p => p.for))];
+// categories: For him / For her / Unisex, with counts; links like #for-him open a category
 const filters = $('.filters');
-if (PRODUCTS.length > 6 && kinds.length > 1) {
-  filters.hidden = false;
-  filters.innerHTML = ['All', ...kinds].map((k, i) => `<button type="button" class="chip-btn" aria-pressed="${i === 0}" data-filter="${esc(k)}">${esc(k)}</button>`).join('');
-  filters.addEventListener('click', e => {
-    const btn = e.target.closest('.chip-btn'); if (!btn) return;
-    $$('.chip-btn', filters).forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-    $$('.card', cards).forEach(c => {
-      const on = btn.dataset.filter === 'All' || c.dataset.for === btn.dataset.filter;
-      c.classList.toggle('off', !on); c.classList.remove('show');
-      if (on) { void c.offsetWidth; c.classList.add('show'); }
-    });
+const slug = c => c.toLowerCase().replace(/[^a-z]+/g, '-');
+const count = c => PRODUCTS.filter(p => c === 'All' || p.for === c).length;
+filters.innerHTML = ['All', ...CATEGORIES].map((c, i) =>
+  `<button type="button" class="chip-btn" aria-pressed="${i === 0}" data-filter="${esc(c)}">${esc(c)}<span class="count">${count(c)}</span></button>`).join('');
+const empty = document.createElement('li');
+empty.className = 'empty'; empty.hidden = true;
+cards.appendChild(empty);
+function showCategory(cat) {
+  $$('.chip-btn', filters).forEach(b => b.setAttribute('aria-pressed', String(b.dataset.filter === cat)));
+  let n = 0;
+  $$('.card', cards).forEach(c => {
+    const on = cat === 'All' || c.dataset.for === cat;
+    if (on) n++;
+    c.classList.toggle('off', !on); c.classList.remove('show');
+    if (on) { void c.offsetWidth; c.classList.add('show'); }
   });
+  empty.hidden = n > 0;
+  if (!n) empty.innerHTML = `New ${esc(cat.toLowerCase())} bottles are on the way. Looking for one now? <a href="#request">Tell us which</a> and we'll find it.`;
 }
+filters.addEventListener('click', e => { const b = e.target.closest('.chip-btn'); if (b) showCategory(b.dataset.filter); });
+function fromHash() {
+  const cat = CATEGORIES.find(c => '#' + slug(c) === location.hash);
+  if (!cat) return;
+  showCategory(cat);
+  $('#shop').scrollIntoView({ behavior: reducedMQ.matches ? 'auto' : 'smooth' });
+}
+addEventListener('hashchange', fromHash);
+fromHash();
 
 /* ---------- reveals ---------- */
 const io = new IntersectionObserver(es => es.forEach(e => {

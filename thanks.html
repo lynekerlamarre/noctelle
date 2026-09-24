@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thank you · NOCTELLE</title>
+<meta name="description" content="Your NOCTELLE order is confirmed.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0F0D0B">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F0D0B'/%3E%3Cpath d='M32 10C32 10 16 30 16 40a16 16 0 0 0 32 0C48 30 32 10 32 10Z' fill='none' stroke='%23D4AF6A' stroke-width='3'/%3E%3Cpath d='M38 30a10 10 0 1 0 0 18 8 8 0 1 1 0-18Z' fill='%23F4EEE4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono&family=Jost:wght@300;400;500&family=Marcellus&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+  .thanks{min-height:100svh;display:grid;place-items:center;padding:96px 16px 64px;text-align:center}
+  .thanks .order-card{max-width:620px}
+  .thanks svg.drop{width:64px;height:64px;margin:0 auto 22px;fill:none;stroke:var(--accent);stroke-width:2}
+  .thanks svg.drop path{stroke-dasharray:130;stroke-dashoffset:130;animation:draw2 1.6s var(--ease-out) .3s forwards}
+  .thanks ol{list-style:none;margin:32px 0 36px;padding:0;display:grid;gap:14px;text-align:left}
+  .thanks li{display:grid;grid-template-columns:32px 1fr;gap:14px;align-items:baseline;color:var(--text-secondary)}
+  .thanks li b{font:400 12px/1 var(--f-mono);color:var(--accent);letter-spacing:.1em}
+  .thanks .cta-row{justify-content:center}
+</style>
+</head>
+<body>
+<div class="env" aria-hidden="true"><div class="glow g1"></div><div class="glow g2"></div><div class="grain"></div></div>
+<main class="thanks">
+  <div class="order-card">
+    <svg class="drop" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8C32 8 15 29 15 40a17 17 0 0 0 34 0C49 29 32 8 32 8Z"/></svg>
+    <p class="label">Order confirmed</p>
+    <h1 style="font-size:clamp(40px,6vw,64px);margin:16px 0 14px">Thank you.</h1>
+    <p class="lede" style="margin:0 auto">Your payment went through and your bottle is reserved. Stripe has emailed you a receipt.</p>
+    <ol>
+      <li><b>01</b><span>We pack your bottle, sealed in its original box.</span></li>
+      <li><b>02</b><span>It ships within 1 to 2 business days and you get a tracking link by email.</span></li>
+      <li><b>03</b><span>When it arrives, check the batch code on the box at CheckFresh.</span></li>
+    </ol>
+    <div class="cta-row">
+      <a class="btn" href="./#shop">Keep shopping</a>
+      <a class="btn btn-ghost" href="./#request">Ask us a question</a>
+    </div>
+  </div>
+</main>
+</body>
+</html>
